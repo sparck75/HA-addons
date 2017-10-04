@@ -3,9 +3,7 @@ services:
   - docker
 before_install:
   - sudo apt-get install jq
-#  - wget https://github.com/bestlibre/hassio-addons/master/build.sh -O build.sh
   - chmod u+x build.sh
-#  - wget https://github.com/bestlibre/hassio-addons/master/build-scripts/addons/create_hassio_addon.sh -O create_hassio_addon.sh
   - chmod u+x create_hassio_addon.sh
 env:
   - ADDON="appdaemon"
