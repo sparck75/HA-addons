@@ -9,5 +9,5 @@ env:
   - ADDON=appdaemon ARCH=amd64
   - ADDON=appdaemon ARCH=i386
 script:
-  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+  - docker login -u "$DOCKER_USER" -p "$DOCKER_PASS"
   - ./builds.sh "$ADDON" "$ARCH"
