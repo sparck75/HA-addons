@@ -42,7 +42,7 @@ build_addon() {
   build_cmd="docker run --rm --privileged \
     -v ~/.docker:/root/.docker \
     -v "${PWD}/${1}:/data" \
-    homeassistant/amd64-addon-configurator:latest \
+    homeassistant/resinos-hassio:1.1-raspberrypi3 \
     --addon -t /data"
 
   if [[ -n "$2" && "$2" != "all" ]]
