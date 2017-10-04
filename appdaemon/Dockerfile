@@ -1,6 +1,7 @@
 ARG BUILD_FROM
-#FROM $BUILD_FROM
-FROM %%BASE_IMAGE%%
+FROM $BUILD_FROM
+#FROM %%BASE_IMAGE%%
+
 ENV LANG C.UTF-8
 
 RUN apk add --no-cache jq git python3 \ 
