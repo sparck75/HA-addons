@@ -3,10 +3,12 @@ services:
   - docker
 before_install:
   - sudo apt-get install jq
-env:
-  - ADDON="appdaemon"
   - chmod u+x build.sh
   - chmod u+x create_hassio_addon.sh
+env:
+  - ADDON="appdaemon"
+
 script:
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
+  
   - ./build.sh $ADDON
