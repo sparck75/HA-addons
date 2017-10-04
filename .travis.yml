@@ -3,8 +3,9 @@ services:
   - docker
 before_install:
   - sudo apt-get install jq
-  - chmod u+x build.sh
-  - chmod u+x create_hassio_addon.sh
+  - chmod u+x builds.sh
+#  - chmod u+x builds.sh
+#  - chmod u+x create_hassio_addon.sh
 env:
   - ADDON=appdaemon ARCH=armhf
   - ADDON=appdaemon ARCH=aarch64
@@ -12,4 +13,4 @@ env:
   - ADDON=appdaemon ARCH=i386
 script:
   - docker login -u "$DOCKER_USER" -p "$DOCKER_PASS"
-  - ./build.sh "$ADDON" "$ARCH"
+  - ./builds.sh "$ADDON" "$ARCH"
