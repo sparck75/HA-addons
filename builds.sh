@@ -42,7 +42,7 @@ build_addon() {
   build_cmd="docker run --rm --privileged \
     -v ~/.docker:/root/.docker \
     -v "${PWD}/${1}:/data" \
-   homeassistant/docker-build-env:latest \
+    homeassistant/docker-build-env:latest \
     --addon -t /data"
 
   if [[ -n "$2" && "$2" != "all" ]]
