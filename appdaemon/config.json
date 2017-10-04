@@ -1,9 +1,9 @@
 {
     "name": "AppDaemon",
-    "version": "0.0.15",
+    "version": "0.0.16",
     "slug": "appdaemon",
     "description": "Beta version of HADaemon (https://github.com/home-assistant/appdaemon/tree/hadashboard_beta)",
-    "url": "https://github.com/sparck75/hassio-addons",
+    "url": "https://github.com/sparck75/HA-addons/tree/master/appdaemon",
     "startup": "after",
     "image": "vkorn/{arch}-appdaemon",
     "boot": "auto",
