@@ -1,4 +1,4 @@
-FROM sparck75/armhf-appdaemon
+FROM %%BASE_IMAGE%%
 
 ENV LANG C.UTF-8
 
