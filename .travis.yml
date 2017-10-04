@@ -1,14 +1,17 @@
-sudo: required
-services:
-  - docker
-before_install:
-  - sudo apt-get install jq
-  - chmod u+x build.sh
-  - chmod u+x create_hassio_addon.sh
-env:
-  - ADDON="appdaemon"
+language: bash
+
+# Use container-based infrastructure for quicker build start-up
+sudo: false
+
+addons:
+  apt:
+    sources:
+    - debian-sid    # Grab shellcheck from the Debian repo (o_O)
+    packages:
+    - shellcheck
 
 script:
-  - docker login -u $DOCKER_USER -p $DOCKER_PASS
-  
-  - ./build.sh $ADDON
+ - bash -c 'shopt -s globstar; shellcheck **/*.sh'
+
+matrix:
+  fast_finish: true
