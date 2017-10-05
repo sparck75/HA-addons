@@ -16,3 +16,8 @@ script:
   - docker login -u "$DOCKER_USER" -p "$DOCKER_PASS"
 #  - ./builds.sh "$ADDON" "$ARCH"
   - ./build.sh "$ADDON"
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -u="$DOCKER_USER" -p="$DOCKER_PASS";
+    docker push USER/REPO;
+    fi
