@@ -9,7 +9,7 @@
     "boot": "auto",
     "map": ["config:rw"],
     "options": {
-        "domain": "cp.local.io"
+        "domain": "cp69.local.io"
     },
     "schema": {
         "domain": "str"

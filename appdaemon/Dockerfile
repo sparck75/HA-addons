@@ -4,6 +4,7 @@ FROM resin/raspberrypi3-python:3.6
 #FROM %%BASE_IMAGE%%
 
 ENV LANG C.UTF-8
+
 RUN pip3 install appdaemon
 RUN pip3 install ics
 #RUN apk add --no-cache jq git python3 \ 
@@ -20,6 +21,7 @@ RUN sed -ri "s/add_static\((.*)\)/add_static\(\1, follow_symlinks=True\)/g" /usr
     
 COPY appdaemon-example.yaml /etc/
 COPY run.sh /
+
 RUN chmod a+x /run.sh
 
 CMD [ "/run.sh" ]
