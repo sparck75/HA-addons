@@ -3,7 +3,7 @@
     "version": "latest",
     "slug": "appdaemon",
     "description": "Beta version of HADaemon (https://github.com/home-assistant/appdaemon/tree/hadashboard_beta)",
-    "url": "https://github.com/sparck75/HA-addons/tree/master/appdaemon",
+    "url": "https://github.com/sparck75/HA-addons",
     "startup": "after",
     "image": "sparck75/{arch}-appdaemon",
     "boot": "auto",
