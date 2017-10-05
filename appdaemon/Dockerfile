@@ -14,6 +14,7 @@ RUN apk add --no-cache jq git python3 \
 	&& pip3 install --upgrade pip \
 	&& if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi \ 
 	&& pip install git+https://github.com/home-assistant/appdaemon.git@master
+	
 ## hack to support symlinks in static folders
 #RUN sed -ri "s/add_static\((.*)\)/add_static\(\1, follow_symlinks=True\)/g" /usr/local/lib/python3.6/site-packages/appdaemon/rundash.py \
 #    && ln -s /conf/assets/javascript /usr/local/lib/python3.6/site-packages/appdaemon/assets/javascript/custom \
