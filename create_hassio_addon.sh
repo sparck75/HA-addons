@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-BUILD_CONTAINER_NAME=ha-addons-$$
+BUILD_CONTAINER_NAME=hassio-addons-$$
 DOCKER_PUSH="true"
 DOCKER_CACHE="true"
 DOCKER_WITH_LATEST="true"
