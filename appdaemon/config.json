@@ -5,7 +5,7 @@
     "description": "Beta version of HADaemon (https://github.com/home-assistant/appdaemon/tree/hadashboard_beta)",
     "url": "https://github.com/sparck75/ha-addon/appdaemon",
     "startup": "after",
-    "image": "sparck75/{arch}-appdaemon",
+    "image": "acockburn/appdaemon",
     "boot": "auto",
     "map": ["config:rw"],
     "options": {
