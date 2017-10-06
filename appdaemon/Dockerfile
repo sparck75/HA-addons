@@ -14,7 +14,7 @@ RUN apk add --no-cache jq git python3 \
 	&& rm -r /usr/lib/python*/ensurepip \
 	&& pip3 install --upgrade pip setuptools \ 
 	&& pip3 install --upgrade pip \
-	&& pip3 install libffi-dev \
+	&& apt-get install libffi-dev \
 	&& if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi \ 
 	&& pip install git+https://github.com/home-assistant/appdaemon.git@master
 	
