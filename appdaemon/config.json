@@ -1,6 +1,6 @@
 {
     "name": "AppDaemon",
-    "version": "latest",
+    "version": "1.0",
     "slug": "appdaemon",
     "description": "Beta version of HADaemon (https://github.com/home-assistant/appdaemon/tree/hadashboard_beta)",
     "url": "https://github.com/sparck75/HA-addons/appdaemon",
