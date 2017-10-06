@@ -1,4 +1,4 @@
-FROM resin/raspberrypi3-python:3.6
+FROM homeassistant/docker-build-env:latest
 #FROM resin/raspberrypi3-python:3.6
 #ARG BUILD_FROM
 #FROM $BUILD_FROM
