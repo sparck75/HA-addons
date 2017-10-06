@@ -5,7 +5,8 @@ FROM resin/raspberrypi3-python:3.6
 
 ENV LANG C.UTF-8
 
-RUN pip3 install appdaemon
+#RUN pip3 install appdaemon
+RUN git clone https://github.com/acockburn/appdaemon.git tmp && mv tmp/* appdaemon/ && rm -rf tmp
 RUN pip3 install ics
 #RUN apk add --no-cache jq git python3 \ 
 #	&& python3 -m ensurepip \ 
