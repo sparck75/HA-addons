@@ -9,7 +9,7 @@ ENV LANG C.UTF-8
 #RUN pip3 install appdaemon
 #RUN git clone https://github.com/acockburn/appdaemon.git tmp && mv tmp/* appdaemon/ && rm -rf tmp
 #RUN pip3 install ics
-RUN apk add --no-cache jq git python3 \ 
+RUN apk add --no-cache jq git python3 libffi-dev \ 
 	&& python3 -m ensurepip \ 
 	&& rm -r /usr/lib/python*/ensurepip \
 	&& pip3 install --upgrade pip setuptools \ 
