@@ -11,7 +11,6 @@ ENV LANG C.UTF-8
 #RUN pip3 install ics
 RUN apk add --no-cache jq git python3-dev \ 
         libffi-dev libressl-dev glib-dev \
-        eudev-dev eudev-libs \
         libxslt-dev libxslt libxml2-dev libxml2 \
         libpng-dev libjpeg-turbo-dev tiff-dev \
 	&& python3 -m ensurepip \ 
