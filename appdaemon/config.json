@@ -3,7 +3,7 @@
     "version": "latest",
     "slug": "appdaemon",
     "description": "Beta version of HADaemon ()",
-    "url": "https://github.com/sparck75/ha-addon/appdaemon",
+    "url": "https://github.com/sparck75/ha-addons/appdaemon",
     "startup": "after",
     "image": "sparck75/{arch}-appdaemon",
     "boot": "auto",
