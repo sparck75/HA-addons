@@ -3,6 +3,7 @@ services:
   - docker
 before_install:
   - sudo apt-get install jq
+  - sudo apt-get install -y python-cffi
   - sudo apt-get install -y python3-cffi
 #  - chmod u+x builds.sh
   - chmod u+x build.sh

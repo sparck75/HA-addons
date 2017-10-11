@@ -6,7 +6,7 @@ DOCKER_PUSH="true"
 DOCKER_CACHE="true"
 DOCKER_WITH_LATEST="true"
 BRANCH=master
-REPOSITORY=https://github.com/home-assistant/appdaemon
+REPOSITORY=https://github.com/sparck75/ha-addons
 
 cleanup() {
     echo "[INFO] Cleanup."
@@ -92,7 +92,7 @@ done
 
 # Sanity checks
 if [ "$ARCH" != 'armhf' ] && [ "$ARCH" != 'aarch64' ] && [ "$ARCH" != 'i386' ] && [ "$ARCH" != 'amd64' ]; then
-    echo "Error: $ARCH is not a supported platform for hassio-supervisor!"
+    echo "Error: $ARCH is not a supported platform for ha-addons!"
     help
     exit 1
 fi
@@ -109,7 +109,7 @@ popd > /dev/null 2>&1
 
 BASE_IMAGE="homeassistant\/$ARCH-base:latest"
 BUILD_DIR=${BUILD_DIR:=$SCRIPTPATH}
-WORKSPACE=${BUILD_DIR:=$SCRIPTPATH}/hassio-supervisor-$ARCH
+WORKSPACE=${BUILD_DIR:=$SCRIPTPATH}/ha-addons-$ARCH
 ADDON_WORKSPACE=$WORKSPACE/$SLUG
 
 # setup docker
