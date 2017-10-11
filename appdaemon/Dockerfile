@@ -7,6 +7,7 @@ FROM %%BASE_IMAGE%%
 ENV LANG C.UTF-8
 
 RUN pip3 install appdaemon
+RUN rm -rf appdaemon
 RUN git clone https://github.com/acockburn/appdaemon.git appdaemon
 # && mv tmp/* appdaemon/ && rm -rf tmp
 RUN pip3 install ics
