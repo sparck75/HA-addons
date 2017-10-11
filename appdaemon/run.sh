@@ -12,4 +12,4 @@ if [ ! -d ${CONFIG_DIR} ]; then
 fi
 
 echo 0.0.0.0 ${DOMAIN} >> /etc/hosts
-appdaemon -c "$CONFIG_DIR" --commtype SSE -D DEBUG 
+appdaemon -c "$CONFIG_DIR" -D DEBUG 
