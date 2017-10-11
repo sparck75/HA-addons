@@ -6,19 +6,19 @@ FROM %%BASE_IMAGE%%
 
 ENV LANG C.UTF-8
 
-#RUN pip3 install appdaemon
-#RUN git clone https://github.com/acockburn/appdaemon.git tmp && mv tmp/* appdaemon/ && rm -rf tmp
-#RUN pip3 install ics
-RUN apk add --no-cache jq git python3-dev \ 
-        libffi-dev libressl-dev glib-dev \
-        libxslt-dev libxslt libxml2-dev libxml2 \
-        libpng-dev libjpeg-turbo-dev tiff-dev \
-	&& python3 -m ensurepip \ 
-	&& rm -r /usr/lib/python*/ensurepip \
-	&& pip3 install --upgrade pip setuptools \ 
-	&& pip3 install --upgrade pip \
-	&& if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi \ 
-	&& pip install git+https://github.com/sparck75/appdaemon.git@master
+RUN pip3 install appdaemon
+RUN git clone https://github.com/acockburn/appdaemon.git tmp && mv tmp/* appdaemon/ && rm -rf tmp
+RUN pip3 install ics
+#RUN apk add --no-cache jq git python3-dev \ 
+#        libffi-dev libressl-dev glib-dev \
+#        libxslt-dev libxslt libxml2-dev libxml2 \
+#        libpng-dev libjpeg-turbo-dev tiff-dev \
+#	&& python3 -m ensurepip \ 
+#	&& rm -r /usr/lib/python*/ensurepip \
+#	&& pip3 install --upgrade pip setuptools \ 
+#	&& pip3 install --upgrade pip \
+#	&& if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi \ 
+#	&& pip install git+https://github.com/sparck75/appdaemon.git@master
 	
 ## hack to support symlinks in static folders
 #RUN sed -ri "s/add_static\((.*)\)/add_static\(\1, follow_symlinks=True\)/g" /usr/local/lib/python3.6/site-packages/appdaemon/rundash.py \
