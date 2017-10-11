@@ -107,7 +107,7 @@ pushd "$(dirname "$0")" > /dev/null 2>&1
 SCRIPTPATH=$(pwd)
 popd > /dev/null 2>&1
 
-BASE_IMAGE="sparck75\/$ARCH-base:latest"
+BASE_IMAGE="sparck75\/appdaemon-$ARCH:latest"
 BUILD_DIR=${BUILD_DIR:=$SCRIPTPATH}
 WORKSPACE=${BUILD_DIR:=$SCRIPTPATH}/appdaemon-$ARCH
 ADDON_WORKSPACE=$WORKSPACE/$SLUG
