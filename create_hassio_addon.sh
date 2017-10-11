@@ -107,9 +107,9 @@ pushd "$(dirname "$0")" > /dev/null 2>&1
 SCRIPTPATH=$(pwd)
 popd > /dev/null 2>&1
 
-BASE_IMAGE="sparck75\/appdaemon-$ARCH:latest"
+BASE_IMAGE="sparck75\/$ARCH-appdaemon:latest"
 BUILD_DIR=${BUILD_DIR:=$SCRIPTPATH}
-WORKSPACE=${BUILD_DIR:=$SCRIPTPATH}/appdaemon-$ARCH
+WORKSPACE=${BUILD_DIR:=$SCRIPTPATH}/$ARCH-appdaemon
 ADDON_WORKSPACE=$WORKSPACE/$SLUG
 
 # setup docker
