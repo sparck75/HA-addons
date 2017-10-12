@@ -9,12 +9,12 @@
     "boot": "auto",
     "map": ["config:rw"],
     "options": {
-        "domain": "cp69.local.io"
+        "domain": "cp66.local.io"
     },
     "schema": {
         "domain": "str"
     }, 
     "ports": {
-        "80/tcp": 80
+        "80/tcp": 81
     }
 }

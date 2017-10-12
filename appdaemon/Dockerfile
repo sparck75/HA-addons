@@ -2,14 +2,17 @@
 #FROM resin/raspberrypi3-python:3.6
 #ARG BUILD_FROM
 #FROM $BUILD_FROM
-FROM %%BASE_IMAGE%%
+#FROM %%BASE_IMAGE%%
+FROM python:3.6
 
 ENV LANG C.UTF-8
 
+RUN sudo apt-get -qq update
+RUN sudo apt-get install jqRUN sudo apt-get install -y python-cffi
+RUN sudo apt-get install -y python3-cffi
 RUN pip3 install appdaemon
 RUN rm -rf appdaemon
-RUN git clone https://github.com/acockburn/appdaemon.git appdaemon
-# && mv tmp/* appdaemon/ && rm -rf tmp
+RUN git clone https://github.com/someassistant/appdaemon.git && mv tmp/* appdaemon/ && rm -rf tmp
 RUN pip3 install ics
 #RUN apk add --no-cache jq git python3-dev \ 
 #        libffi-dev libressl-dev glib-dev \
