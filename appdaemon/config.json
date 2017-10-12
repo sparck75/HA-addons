@@ -5,7 +5,7 @@
     "description": "Beta version of HADaemon ()",
     "url": "https://github.com/sparck75/ha-addons/appdaemon",
     "startup": "after",
-    "image": "sparck75/{arch}-appdaemon",
+    "image": "sparck75/{arch}-addon-appdaemon",
     "boot": "auto",
     "map": ["config:rw"],
     "options": {
