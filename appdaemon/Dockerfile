@@ -12,7 +12,8 @@ ENV LANG C.UTF-8
 #RUN sudo apt-get install -y python3-cffi
 RUN pip3 install appdaemon
 RUN rm -rf appdaemon
-RUN git clone https://github.com/home-assistant/appdaemon && mv tmp/* appdaemon/ && rm -rf tmp
+RUN git clone https://github.com/home-assistant/appdaemon appdaemon
+#RUN && mv tmp/* appdaemon/ && rm -rf tmp
 RUN pip3 install ics
 #RUN apk add --no-cache jq git python3-dev \ 
 #        libffi-dev libressl-dev glib-dev \
