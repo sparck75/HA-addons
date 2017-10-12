@@ -7,9 +7,9 @@ FROM python:3.6
 
 ENV LANG C.UTF-8
 
-RUN sudo apt-get -qq update
-RUN sudo apt-get install jqRUN sudo apt-get install -y python-cffi
-RUN sudo apt-get install -y python3-cffi
+#RUN sudo apt-get -qq update
+#RUN sudo apt-get install jqRUN sudo apt-get install -y python-cffi
+#RUN sudo apt-get install -y python3-cffi
 RUN pip3 install appdaemon
 RUN rm -rf appdaemon
 RUN git clone https://github.com/someassistant/appdaemon.git && mv tmp/* appdaemon/ && rm -rf tmp
