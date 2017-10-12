@@ -11,7 +11,7 @@ ENV LANG C.UTF-8
 #RUN sudo apt-get install jqRUN sudo apt-get install -y python-cffi
 #RUN sudo apt-get install -y python3-cffi
 RUN pip3 install appdaemon
-RUN rm -rf appdaemon
+#RUN rm -rf appdaemon
 RUN git clone https://github.com/home-assistant/appdaemon appdaemon
 #RUN && mv tmp/* appdaemon/ && rm -rf tmp
 RUN pip3 install ics
@@ -27,9 +27,9 @@ RUN pip3 install ics
 #	&& pip install git+https://github.com/sparck75/appdaemon.git@master
 	
 ## hack to support symlinks in static folders
-#RUN sed -ri "s/add_static\((.*)\)/add_static\(\1, follow_symlinks=True\)/g" /usr/local/lib/python3.6/site-packages/appdaemon/rundash.py \
-#    && ln -s /conf/assets/javascript /usr/local/lib/python3.6/site-packages/appdaemon/assets/javascript/custom \
-#    && ln -s /conf/assets/images /usr/local/lib/python3.6/site-packages/appdaemon/assets/images/custom
+RUN sed -ri "s/add_static\((.*)\)/add_static\(\1, follow_symlinks=True\)/g" /usr/local/lib/python3.6/site-packages/appdaemon/rundash.py \
+    && ln -s /conf/assets/javascript /usr/local/lib/python3.6/site-packages/appdaemon/assets/javascript/custom \
+    && ln -s /conf/assets/images /usr/local/lib/python3.6/site-packages/appdaemon/assets/images/custom
     
 COPY appdaemon-example.yaml /etc/
 COPY run.sh /
