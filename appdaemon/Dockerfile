@@ -31,13 +31,14 @@ RUN	apk update && apk upgrade
 #    && pip install cffi
 #RUN apt-get update && \
 #    apt-get install -y libffi-dev 
-RUN apk add --no-cache jq git libffi-dev py-pip python3-dev python \ 
+RUN apk add --no-cache jq git libffi-dev libffi6 py-pip   \
+     python3-dev python-dev  
 	&& python3 -m ensurepip \ 
 	&& pip3 list \
-	&& rm -r /usr/lib/python*/ensurepip \
 	&& pip3 install --upgrade pip setuptools \ 
 	&& pip3 install --upgrade pip \
 	&& pip3 install --upgrade pip cffi \
+	&& rm -r /usr/lib/python*/ensurepip \
 	&& if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi \ 
 	&& pip install git+https://github.com/home-assistant/appdaemon.git@master
 	
