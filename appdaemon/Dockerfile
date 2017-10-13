@@ -27,6 +27,7 @@ RUN apk add --no-cache jq git python3-dev \
 	&& pip3 install --upgrade pip setuptools \ 
 	&& pip3 install --upgrade pip \
 	&& if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi \ 
+	&& pip install cffi \
 	&& pip install git+https://github.com/home-assistant/appdaemon.git@master
 	
 ## hack to support symlinks in static folders
