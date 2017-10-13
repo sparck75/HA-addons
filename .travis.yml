@@ -7,7 +7,7 @@ before_install:
   - sudo apt-get install -y libffi-dev
 #  - sudo apt-get install gcc
 #  - sudo apt-get install -y python-cffi
-  - sudo apt-get install -y libffi
+  - sudo apt-get install -y libffi6-dev
 #  - sudo apt-get install -y cffi
   - sudo apt-get install python-tk
   - sudo apt-get install py3-cffi
