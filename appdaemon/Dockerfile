@@ -27,17 +27,17 @@ ENV LANG C.UTF-8
 #	&& pip3 install --upgrade pip cffi \
 #RUN pip install --upgrade cffi
 RUN	apk update && apk upgrade
-RUN	apk add --no-cache libffi-dev py-pip python-dev \
-    && pip install cffi
+#RUN	apk add --no-cache libffi-dev py-pip python-dev \
+#    && pip install cffi
 #RUN apt-get update && \
 #    apt-get install -y libffi-dev 
 RUN apk add --no-cache jq git libffi-dev py-pip python3-dev python \ 
-    && pip install cffi \
 	&& python3 -m ensurepip \ 
 	&& rm -r /usr/lib/python*/ensurepip \
 	&& pip3 install --upgrade pip setuptools \ 
 	&& pip3 install --upgrade pip \
 	&& if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi \ 
+	&& pip install cffi \
 	&& pip install git+https://github.com/home-assistant/appdaemon.git@master
 	
 ## hack to support symlinks in static folders
