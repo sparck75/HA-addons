@@ -20,10 +20,10 @@ ENV LANG C.UTF-8
 ######        libffi-dev openssl-dev glib-dev \
 ######        libxslt-dev libxslt libxml2-dev libxml2 \
 ######        libpng-dev libjpeg-turbo-dev tiff-dev \
-RUN apk add --no-cache libffi-dev \
-	&& pip3 install cffi
+#RUN apk add --no-cache libffi-dev \
+#	&& pip3 install cffi
 	
-RUN apk add --no-cache jq git libffi-dev python3-dev \ 
+RUN apk add --no-cache jq git libffi-dev openssl-dev python3-dev \ 
 	&& python3 -m ensurepip \ 
 	&& rm -r /usr/lib/python*/ensurepip \
 	&& pip3 install --upgrade pip setuptools \ 
