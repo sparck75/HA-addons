@@ -23,11 +23,12 @@ ENV LANG C.UTF-8
 #RUN apk add --no-cache libffi-dev \
 #	&& pip3 install cffi
 	
-RUN apk add --no-cache jq git libffi-dev openssl-dev python3-dev \ 
+#RUN apk add --no-cache jq git libffi-dev openssl-dev python3-dev \ 
+#	&& pip3 install --upgrade pip cffi \
+RUN apk add --no-cache jq git python3-dev \ 
 	&& python3 -m ensurepip \ 
 	&& rm -r /usr/lib/python*/ensurepip \
 	&& pip3 install --upgrade pip setuptools \ 
-	&& pip3 install --upgrade pip cffi \
 	&& pip3 install --upgrade pip \
 	&& if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi \ 
 	&& pip install git+https://github.com/home-assistant/appdaemon.git@master
