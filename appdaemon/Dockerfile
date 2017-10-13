@@ -8,10 +8,10 @@ FROM alpine:3.6
 
 ENV LANG C.UTF-8
 
-RUN sudo apt-get -qq update
-RUN sudo apt-get install jq
-RUN sudo apt-get install -y python-cffi
-RUN sudo apt-get install -y python-cffi
+#RUN sudo apt-get -qq update
+#RUN sudo apt-get install jq
+###RUN sudo apt-get install -y python-cffi
+#RUN sudo apt-get install -y python-cffi
 #RUN sudo apt-get install -y openssl-dev
 #
 ##############################
