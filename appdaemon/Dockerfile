@@ -31,11 +31,10 @@ RUN	apk update && apk upgrade
 #    && pip install cffi
 #RUN apt-get update && \
 #    apt-get install -y libffi-dev 
-RUN apk add --no-cache jq git libffi-dev libffi6 py-pip   \
-    python3-dev python-dev  
-	&& python3 -m ensurepip \ 
-	&& pip3 list \
-	&& pip3 install --upgrade pip setuptools \ 
+RUN apk add --no-cache jq git libffi-dev libffi6 py-pip \
+    && python3-dev python-dev \
+	&& python3 -m ensurepip \
+	&& pip3 install --upgrade pip setuptools \
 	&& pip3 install --upgrade pip \
 	&& pip3 install --upgrade pip cffi \
 	&& rm -r /usr/lib/python*/ensurepip \
