@@ -40,7 +40,7 @@ ENV LANG C.UTF-8
 #  - sudo echo "http://dl-4.alpinelinux.org/alpine/v3.6/main" >> /etc/apk/repositories; \
 #  - sudo echo "http://dl-5.alpinelinux.org/alpine/v3.6/main" >> /etc/apk/repositories
 ######
-RUN apk --no-cache add --repository http://dl-cdn.alpinelinux.org/alpine/3.6/main
+#RUN apk --no-cache add --repository http://dl-cdn.alpinelinux.org/alpine/3.6/main
 RUN	apk update && apk upgrade
 ##################
 #RUN	apk add --no-cache libffi-dev py-pip python-dev \
