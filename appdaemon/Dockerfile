@@ -2,7 +2,8 @@
 #FROM resin/raspberrypi3-python:3.6
 #ARG BUILD_FROM
 #FROM $BUILD_FROM
-FROM %%BASE_IMAGE%%
+#FROM %%BASE_IMAGE%%
+FROM alpine:3.6
 #FROM python:3.6
 
 ENV LANG C.UTF-8
