@@ -2,11 +2,12 @@
 #FROM resin/raspberrypi3-python:3.6
 #ARG BUILD_FROM
 #FROM $BUILD_FROM
-#FROM %%BASE_IMAGE%%
-FROM alpine:3.6
+FROM %%BASE_IMAGE%%
+#FROM alpine:3.6
 #FROM homeassistant/docker-build-env:latest
 
 ENV LANG C.UTF-8
+ENV PATH /usr/local/bin:$PATH
 
 #RUN sudo apt-get -qq update
 #RUN sudo apt-get install jq
@@ -34,7 +35,6 @@ ENV LANG C.UTF-8
 #  - sudo echo "http://dl-cdn.alpinelinux.org/alpine/v3.6/community" >> /etc/apk/repositories 
 #  - sudo echo "http://dl-cdn.alpinelinux.org/alpine/v3.6/main" >> /etc/apk/repositories  
 #  - sudo echo "ipv6" >> /etc/modules
-#  - sudo echo "http://dl-1.alpinelinux.org/alpine/v3.6/main" >> /etc/apk/repositories; \
 #  - sudo echo "http://dl-2.alpinelinux.org/alpine/v3.6/main" >> /etc/apk/repositories; \
 #  - sudo echo "http://dl-3.alpinelinux.org/alpine/v3.6/main" >> /etc/apk/repositories; \
 #  - sudo echo "http://dl-4.alpinelinux.org/alpine/v3.6/main" >> /etc/apk/repositories; \
