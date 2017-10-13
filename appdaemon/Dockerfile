@@ -31,8 +31,8 @@ RUN	apk update && apk upgrade
 #    && pip install cffi
 #RUN apt-get update && \
 #    apt-get install -y libffi-dev 
-RUN apk add --no-cache jq git libffi6 libffi-dev libffi6 py-pip \
-    && python3-dev python-dev \
+RUN apk add --no-cache jq git libffi6 libffi-dev py-pip \
+             python3-dev python-dev \
 	&& python3 -m ensurepip \
 	&& pip3 install --upgrade pip setuptools \
 	&& pip3 install --upgrade pip \
