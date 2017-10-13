@@ -16,7 +16,8 @@ ENV LANG C.UTF-8
 #RUN git clone https://github.com/home-assistant/appdaemon appdaemon
 #RUN && mv tmp/* appdaemon/ && rm -rf tmp
 #RUN pip3 install ics
-RUN apk add --no-cache jq libffi-dev git python3-dev \ 
+RUN apk add --no-cache libffi-dev openssl-dev
+RUN apk add --no-cache jq git python3-dev \ 
         libffi-dev libressl-dev glib-dev \
         libxslt-dev libxslt libxml2-dev libxml2 \
         libpng-dev libjpeg-turbo-dev tiff-dev \
