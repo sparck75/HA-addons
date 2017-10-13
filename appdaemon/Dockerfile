@@ -27,7 +27,8 @@ ENV LANG C.UTF-8
 #	&& pip3 install --upgrade pip cffi \
 #RUN pip install --upgrade cffi
 RUN	apk update && apk upgrade
-RUN	apk add cffi
+RUN	apk add --no-cache libffi-dev  py-pip \
+    && pip install cffi
 #RUN apt-get update && \
 #    apt-get install -y libffi-dev 
 RUN apk add --no-cache jq git libffi-dev python3-dev \ 
