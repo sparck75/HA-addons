@@ -4,7 +4,7 @@ services:
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install jq
-  - sudo apt-get install cffi
+  - sudo apt-get install -y libffi-dev
 #  - sudo apt-get install -y python-cffi
 #  - sudo apt-get install -y python3-ffi
 #  - chmod u+x builds.sh
