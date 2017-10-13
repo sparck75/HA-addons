@@ -20,14 +20,15 @@ ENV LANG C.UTF-8
 ######        libffi-dev openssl-dev glib-dev \
 ######        libxslt-dev libxslt libxml2-dev libxml2 \
 ######        libpng-dev libjpeg-turbo-dev tiff-dev \
+RUN apk add --no-cache libffi-dev \
+	&& pip install cffi
+	
 RUN apk add --no-cache jq git python3-dev \ 
-        libffi-dev openssl-dev \
 	&& python3 -m ensurepip \ 
 	&& rm -r /usr/lib/python*/ensurepip \
 	&& pip3 install --upgrade pip setuptools \ 
 	&& pip3 install --upgrade pip \
 	&& if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi \ 
-	&& pip install cffi \
 	&& pip install git+https://github.com/home-assistant/appdaemon.git@master
 	
 ## hack to support symlinks in static folders
