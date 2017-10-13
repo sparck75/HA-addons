@@ -32,7 +32,7 @@ RUN	apk update && apk upgrade
 #RUN apt-get update && \
 #    apt-get install -y libffi-dev 
 RUN apk add --no-cache jq git libffi-dev libffi6 py-pip   \
-     python3-dev python-dev  
+    python3-dev python-dev  
 	&& python3 -m ensurepip \ 
 	&& pip3 list \
 	&& pip3 install --upgrade pip setuptools \ 
