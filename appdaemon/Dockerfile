@@ -21,7 +21,7 @@ ENV LANG C.UTF-8
 ######        libxslt-dev libxslt libxml2-dev libxml2 \
 ######        libpng-dev libjpeg-turbo-dev tiff-dev \
 RUN apk add --no-cache libffi-dev \
-	&& pip install cffi
+	&& pip3 install cffi
 	
 RUN apk add --no-cache jq git python3-dev \ 
 	&& python3 -m ensurepip \ 
