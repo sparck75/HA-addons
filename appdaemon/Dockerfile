@@ -31,7 +31,18 @@ ENV LANG C.UTF-8
 #RUN apk add --no-cache jq git libffi-dev openssl-dev python3-dev \ 
 #	&& pip3 install --upgrade pip cffi \
 #RUN pip install --upgrade cffi
+#  - sudo echo "http://dl-cdn.alpinelinux.org/alpine/v3.6/community" >> /etc/apk/repositories 
+#  - sudo echo "http://dl-cdn.alpinelinux.org/alpine/v3.6/main" >> /etc/apk/repositories  
+#  - sudo echo "ipv6" >> /etc/modules
+#  - sudo echo "http://dl-1.alpinelinux.org/alpine/v3.6/main" >> /etc/apk/repositories; \
+#  - sudo echo "http://dl-2.alpinelinux.org/alpine/v3.6/main" >> /etc/apk/repositories; \
+#  - sudo echo "http://dl-3.alpinelinux.org/alpine/v3.6/main" >> /etc/apk/repositories; \
+#  - sudo echo "http://dl-4.alpinelinux.org/alpine/v3.6/main" >> /etc/apk/repositories; \
+#  - sudo echo "http://dl-5.alpinelinux.org/alpine/v3.6/main" >> /etc/apk/repositories
+######
+RUN apk --no-cache add --repository http://dl-cdn.alpinelinux.org/alpine/3.6/main
 RUN	apk update && apk upgrade
+##################
 #RUN	apk add --no-cache libffi-dev py-pip python-dev \
 #    && pip install cffi
 #RUN apt-get update && \
