@@ -35,8 +35,8 @@ ENV PATH /usr/local/bin:$PATH
 #  - sudo echo "http://dl-cdn.alpinelinux.org/alpine/v3.6/community" >> /etc/apk/repositories 
 #  - sudo echo "http://dl-cdn.alpinelinux.org/alpine/v3.6/main" >> /etc/apk/repositories  
 #  - sudo echo "ipv6" >> /etc/modules
-#  - sudo echo "http://dl-2.alpinelinux.org/alpine/v3.6/main" >> /etc/apk/repositories; \
-#  - sudo echo "http://dl-3.alpinelinux.org/alpine/v3.6/main" >> /etc/apk/repositories; \
+#  - sudo echo "http://dl-4.alpinelinux.org/alpine/v3.6/community" >> /etc/apk/repositories; \
+#  - sudo echo "http://dl-4.alpinelinux.org/alpine/v3.6/community" >> /etc/apk/repositories; \
 #  - sudo echo "http://dl-4.alpinelinux.org/alpine/v3.6/main" >> /etc/apk/repositories; \
 #  - sudo echo "http://dl-5.alpinelinux.org/alpine/v3.6/main" >> /etc/apk/repositories
 ######
@@ -47,10 +47,10 @@ RUN	apk update && apk upgrade
 #    && pip install cffi
 #RUN apt-get update && \
 #    apt-get install -y libffi-dev 
-RUN apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/v3.6/main \
-	   --repository http://dl-4.alpinelinux.org/alpine/v3.6/main \
-	   jq git python3-dev\
-       libffi-dev \
+RUN apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/v3.6/community\
+	   --repository http://dl-4.alpinelinux.org/alpine/v3.6/community \
+	   jq git python3-dev
+#       libffi-dev \
 	&& python3 -m ensurepip \
 	&& pip3 install --upgrade pip setuptools \
 	&& pip3 install --upgrade pip \
