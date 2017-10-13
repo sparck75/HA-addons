@@ -8,21 +8,26 @@ FROM alpine:3.6
 
 ENV LANG C.UTF-8
 
-#RUN sudo apt-get -qq update
-#RUN sudo apt-get install jqRUN sudo apt-get install -y python-cffi
-#RUN sudo apt-get install -y python3-cffi
+RUN sudo apt-get -qq update
+RUN sudo apt-get install jq
+RUN sudo apt-get install -y python-cffi
+RUN sudo apt-get install -y python-cffi
+#RUN sudo apt-get install -y openssl-dev
+#
+##############################
 #RUN pip3 install appdaemon
 #RUN rm -rf appdaemon
 #RUN git clone https://github.com/home-assistant/appdaemon appdaemon
 #RUN && mv tmp/* appdaemon/ && rm -rf tmp
 #RUN pip3 install ics
+#################################
 #RUN apk add --no-cache libffi-dev openssl-dev
 ######        libffi-dev openssl-dev glib-dev \
 ######        libxslt-dev libxslt libxml2-dev libxml2 \
 ######        libpng-dev libjpeg-turbo-dev tiff-dev \
 #RUN apk add --no-cache libffi-dev \
 #	&& pip3 install cffi
-	
+#
 #RUN apk add --no-cache jq git libffi-dev openssl-dev python3-dev \ 
 #	&& pip3 install --upgrade pip cffi \
 #RUN pip install --upgrade cffi
@@ -31,8 +36,8 @@ RUN	apk update && apk upgrade
 #    && pip install cffi
 #RUN apt-get update && \
 #    apt-get install -y libffi-dev 
-RUN apk add --no-cache jq git libffi6 libffi-dev py-pip \
-             python3-dev python-dev \
+RUN apk add --no-cache jq git libffi6 libffi-dev  \
+             python3-dev python-dev py-pip\
 	&& python3 -m ensurepip \
 	&& pip3 install --upgrade pip setuptools \
 	&& pip3 install --upgrade pip \
