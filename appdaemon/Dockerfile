@@ -32,6 +32,7 @@ RUN	apk add --no-cache libffi-dev  py-pip \
 #RUN apt-get update && \
 #    apt-get install -y libffi-dev 
 RUN apk add --no-cache jq gcc git libffi-dev py-pip python3-dev \ 
+    && pip install gcc \
     && pip install cffi \
 	&& python3 -m ensurepip \ 
 	&& rm -r /usr/lib/python*/ensurepip \
