@@ -50,7 +50,7 @@ RUN	apk update && apk upgrade
 RUN apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/v3.6/main \
 	   --repository http://dl-4.alpinelinux.org/alpine/v3.6/main \
 	   jq git python3-dev\
-       libffi6 libffi6-dev libffi-dev \
+       libffi-dev \
 	&& python3 -m ensurepip \
 	&& pip3 install --upgrade pip setuptools \
 	&& pip3 install --upgrade pip \

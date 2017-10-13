@@ -7,9 +7,10 @@ before_install:
   - sudo apt-get install -y libffi-dev
 #  - sudo apt-get install gcc
 #  - sudo apt-get install -y python-cffi
-  - sudo apt-get install -y libffi6
+  - sudo apt-get install -y libffi
 #  - sudo apt-get install -y cffi
   - sudo apt-get install python-tk
+  - sudo apt-get install py3-cffi
 #  - sudo apt-get install -y openssl-dev
 #  - chmod u+x builds.sh
   - chmod u+x build.sh
