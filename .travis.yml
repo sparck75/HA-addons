@@ -20,10 +20,10 @@ script:
 #  - ./builds.sh "$ADDON" "$ARCH"
   - ./build.sh "$ADDON"
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    docker login -u="$DOCKER_USER" -p="$DOCKER_PASS";
-    docker push docker.io/sparck75/armhf-addon-appdaemon;
-    docker push docker.io/sparck75/amd64-addon-appdaemon;
-    docker push docker.io/sparck75/i386-addon-appdaemon;
-    docker push docker.io/sparck75/aarch64-addon-appdaemon;
-    fi
+#  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+#    docker login -u="$DOCKER_USER" -p="$DOCKER_PASS";
+#    docker push docker.io/sparck75/armhf-addon-appdaemon;
+#    docker push docker.io/sparck75/amd64-addon-appdaemon;
+#    docker push docker.io/sparck75/i386-addon-appdaemon;
+#    docker push docker.io/sparck75/aarch64-addon-appdaemon;
+#    fi

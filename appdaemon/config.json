@@ -2,19 +2,19 @@
     "name": "AppDaemon",
     "version": "latest",
     "slug": "appdaemon",
-    "description": "Beta version of HADaemon ()",
+    "description": "Beta version of HADaemon (test)",
     "url": "https://github.com/sparck75/ha-addons/appdaemon",
     "startup": "after",
     "image": "sparck75/{arch}-addon-appdaemon",
     "boot": "auto",
     "map": ["config:rw"],
     "options": {
-        "domain": "cp66.local.io"
+        "domain": "xxx.duckdns.org"
     },
     "schema": {
         "domain": "str"
     }, 
     "ports": {
-        "80/tcp": 81
+        "80/tcp": 5050
     }
 }
