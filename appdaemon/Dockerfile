@@ -47,10 +47,8 @@ RUN	apk update && apk upgrade
 #    && pip install cffi
 #RUN apt-get update && \
 #    apt-get install -y libffi-dev 
-RUN apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/latest-stable/releases/\
-	   --repository http://http://dl-4.alpinelinux.org/alpine/latest-stable/releases/ \
-	   jq git python3-dev \
-#       libffi-dev \
+RUN apk add --no-cache jq git python3-dev \
+       libffi-dev libffi\
 	&& python3 -m ensurepip \
 	&& pip3 install --upgrade pip setuptools \
 	&& pip3 install --upgrade pip \
