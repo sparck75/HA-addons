@@ -30,7 +30,7 @@ EXPOSE 5050
 # Copy appdaemon into image
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-RUN git clone https://github.com/home-assistant/appdaemon.git@master
+RUN git clone https://github.com/home-assistant/appdaemon
 COPY . .
 
 # Install
