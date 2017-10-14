@@ -51,7 +51,7 @@ RUN pwd
 RUN ls -l
 RUN pip3 install .
 RUN pwd
-RUN ls -l
+RUN ls -l /etc
 RUN ls -lR /usr/src/app
 
 
