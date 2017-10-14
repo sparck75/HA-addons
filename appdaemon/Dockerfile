@@ -1,11 +1,8 @@
 FROM %%BASE_IMAGE%%
-#FROM alpine:3.6
-#
-###############################
+
 ENV LANG C.UTF-8
 ENV PATH /usr/local/bin:$PATH
-###############################
-##
+
 ###############################
 RUN apk add --no-cache gcc musl-dev
 RUN apk add --no-cache jq git python3-dev \
@@ -19,6 +16,9 @@ RUN apk add --no-cache jq git python3-dev \
 	&& if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi \
 	&& pip install git+https://github.com/home-assistant/appdaemon.git@master
 
+###############################
+# Listing installed APK
+###############################
 RUN apk -vv info|sort
 ###############################
 VOLUME /conf
@@ -29,22 +29,30 @@ EXPOSE 5050
 ###############################
 # Copy appdaemon into image
 ###############################
-
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
+###############################
+# DEBUG CODE
+###############################
 #RUN pwd
 #RUN ls -l
 #RUN ls -l /conf
-###############################
+##############################################################
+# Getting latest appdaemon from repository
+##############################################################
 RUN git clone https://github.com/home-assistant/appdaemon .
 #RUN git clone https://github.com/sparck75/appdaemon
 ###############################
+# DEBUG CODE
+###############################
 RUN pwd
-RUN ls -lR /usr/src/app
+RUN ls -l /usr/src/app
 ###############################
 # Start script
+###############################
 RUN chmod +x dockerStart.sh
-CMD [ "./dockerStart.sh -D DEDUG" ]
+RUN ls -l /usr/src/app
+CMD [ "/usr/src/app/dockerStart.sh -D DEDUG" ]
 #RUN chmod +x run.sh
 #CMD [ "./run.sh" ]
 ###############################
