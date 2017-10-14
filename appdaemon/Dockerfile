@@ -23,8 +23,8 @@ RUN apk add --no-cache jq git python3-dev \
 	&& if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi 
 #	&& pip install git+https://github.com/home-assistant/appdaemon.git@master
 #
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+RUN mkdir -p /etc/app
+WORKDIR /etc/app
 VOLUME /conf
 
 # Grab source
@@ -33,12 +33,12 @@ RUN git clone https://github.com/home-assistant/appdaemon.git .
 # INSTALL
 RUN pip3 install .
 
-CMD [ "appdaemon", "-c", "/conf" ]
+CMD [ "appdaemon/appdaemon", "-c", "/conf" ]
 
 #
 #COPY appdaemon-example.yaml /etc/
 #COPY run.sh /##
 #
-#RUN chmod a+x /run.sh
+#RUN chmod a+x /dockerStart.sh
 #
-#CMD [ "/run.sh" ]
+#CMD [ "/dockerStart.sh" ]
