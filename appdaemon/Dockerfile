@@ -3,8 +3,8 @@
 #ARG BUILD_FROM
 #FROM $BUILD_FROM
 #FROM %%BASE_IMAGE%%
-FROM frolvlad/alpine-gxx
-#FROM alpine:3.6
+#FROM frolvlad/alpine-gxx
+FROM alpine:3.6
 #FROM homeassistant/docker-build-env:latest
 
 ENV LANG C.UTF-8
@@ -30,7 +30,7 @@ ENV PATH /usr/local/bin:$PATH
 #RUN apk add --no-cache libffi-dev \
 #	&& pip3 install cffi
 #
-#RUN apk add --no-cache jq git libffi-dev openssl-dev python3-dev \ 
+#RUN apk add --no-cache jq git gcc libffi-dev openssl-dev python3-dev \ 
 #	&& pip3 install --upgrade pip cffi \
 #RUN pip install --upgrade cffi
 #  - sudo echo "http://dl-cdn.alpinelinux.org/alpine/v3.6/community" >> /etc/apk/repositories 
@@ -48,7 +48,7 @@ RUN	apk update && apk upgrade
 #    && pip install cffi
 #RUN apt-get update && \
 #    apt-get install -y libffi-dev 
-RUN apk add --no-cache jq git python3-dev \
+RUN apk add --no-cache jq git gcc python3-dev \
        libffi-dev libffi\
 	&& python3 -m ensurepip \
 	&& pip3 install --upgrade pip setuptools \
