@@ -50,9 +50,10 @@ RUN ls -l /usr/src/app
 ###############################
 # Start script
 ###############################
-RUN chmod +x dockerStart.sh
-RUN ls -l /usr/src/app
-CMD [ "/usr/src/app/dockerStart.sh -D DEDUG" ]
-#RUN chmod +x run.sh
-#CMD [ "./run.sh" ]
+#RUN chmod +x dockerStart.sh
+#RUN ls -l /usr/src/app
+#CMD [ "/usr/src/app/dockerStart.sh -D DEDUG" ]
+WORKDIR /
+RUN chmod +x run.sh
+CMD [ "./run.sh" ]
 ###############################
