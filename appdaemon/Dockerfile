@@ -37,5 +37,5 @@ COPY . .
 RUN pip3 install .
 
 # Start script
-RUN chmod +x /usr/src/appdaemon/dockerStart.sh
+RUN chmod +x /usr/src/app/dockerStart.sh
 CMD [ "./dockerStart.sh" ]
