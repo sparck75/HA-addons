@@ -31,7 +31,7 @@ EXPOSE 5050
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 RUN git clone https://github.com/home-assistant/appdaemon
-COPY . .
+#COPY . .
 
 # Install
 RUN pip3 install .
