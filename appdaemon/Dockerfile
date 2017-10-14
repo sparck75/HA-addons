@@ -28,11 +28,7 @@ VOLUME /certs
 EXPOSE 5050
 
 # Copy appdaemon into image
-#HEAD
-#RUN mkdir -p /usr/src/app
-#WORKDIR /usr/src/app
-#RUN git clone https://github.com/home-assistant/appdaemon
-=======
+
 #RUN mkdir -p /usr/src/app
 RUN pwd
 RUN ls -l
