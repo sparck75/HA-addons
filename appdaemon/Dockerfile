@@ -20,21 +20,22 @@ RUN apk add --no-cache jq git python3-dev \
 	&& pip3 install --upgrade pip cffi \
 #	&& pip3 install --upgrade appdaemon \
 	&& rm -r /usr/lib/python*/ensurepip \
-	&& if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi 
-#	&& pip install git+https://github.com/home-assistant/appdaemon.git@master
+	&& if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi \
+	&& pip install git+https://github.com/home-assistant/appdaemon.git@master
 #
 VOLUME /conf
 VOLUME /certs
 EXPOSE 5050
 
 # Copy appdaemon into image
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-RUN git clone https://github.com/home-assistant/appdaemon
+#RUN mkdir -p /usr/src/app
+RUN ls -l
+#WORKDIR /usr/src/app
+#RUN git clone https://github.com/home-assistant/appdaemon.git@master
 #COPY . .
 
 # Install
-RUN pip3 install .
+#RUN pip3 install .
 
 # Start script
 RUN chmod +x /usr/src/app/dockerStart.sh
