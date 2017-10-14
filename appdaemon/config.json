@@ -9,7 +9,7 @@
     "boot": "auto",
     "map": ["config:rw"],
     "options": {
-        "domain": "xxx.duckdns.org"
+        "domain": "192.168.x.x"
     },
     "schema": {
         "domain": "str"
