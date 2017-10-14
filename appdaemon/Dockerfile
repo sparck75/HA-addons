@@ -8,9 +8,9 @@ ENV PATH /usr/local/bin:$PATH
 
 #####
 #RUN apk --no-cache add --repository http://dl-cdn.alpinelinux.org/alpine/3.6/main
-RUN apk -vv info|sort
+#RUN apk -vv info|sort
 RUN	apk update
-RUN apk -vv info|sort
+#RUN apk -vv info|sort
 ##################
 
 RUN apk add --no-cache gcc musl-dev
@@ -51,7 +51,8 @@ RUN pwd
 RUN ls -l /usr/src/app
 
 
+WORKDIR /usr/src/app/appdaemon
 # Start script
-RUN chmod +x /usr/src/app/dockerStart.sh
-RUN ls -l /usr/src/app
-CMD [ "./dockerStart.sh" ]
+RUN chmod +x dockerStart.sh
+RUN ls -l /usr/src/app/appdaemon
+CMD [ "./appdaemon/dockerStart.sh" ]
