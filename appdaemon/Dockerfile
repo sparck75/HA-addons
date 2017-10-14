@@ -23,7 +23,7 @@ RUN apk add --no-cache jq git python3-dev \
 #	&& pip3 install --upgrade appdaemon \
 	&& rm -r /usr/lib/python*/ensurepip \
 	&& if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi \
-	&& pip install git+https://github.com/home-assistant/appdaemon.git@master
+#	&& pip install git+https://github.com/home-assistant/appdaemon.git@master
 
 RUN apk -vv info|sort
 #
@@ -43,17 +43,19 @@ WORKDIR /usr/src/app
 RUN ls -l /usr/src/app
 RUN pwd
 RUN ls -l /conf
-RUN git clone https://github.com/home-assistant/appdaemon
-
-RUN pwd
-RUN ls -l
-RUN pwd
-RUN ls -l /usr/src/app
-
+#RUN git clone https://github.com/home-assistant/appdaemon
+RUN git clone https://github.com/sparck75/appdaemon
 
 WORKDIR /usr/src/app/appdaemon
+RUN pwd
+RUN ls -l
+RUN pip3 install .
+RUN pwd
+RUN ls -l
+RUN ls -lR /usr/src/app
+
+
+
 # Start script
 RUN chmod +x dockerStart.sh
-RUN ls -l
-RUN ls -l /usr/src/app/appdaemon
 CMD [ "./dockerStart.sh" ]
