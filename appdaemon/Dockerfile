@@ -48,7 +48,8 @@ RUN	apk update && apk upgrade
 #    && pip install cffi
 #RUN apt-get update && \
 #    apt-get install -y libffi-dev 
-RUN apk add --no-cache jq git gcc python3-dev \
+RUN apk add --no-cache gcc musl-dev
+RUN apk add --no-cache jq git python3-dev \
        libffi-dev libffi\
 	&& python3 -m ensurepip \
 	&& pip3 install --upgrade pip setuptools \
