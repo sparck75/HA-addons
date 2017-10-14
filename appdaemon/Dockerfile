@@ -34,7 +34,7 @@ EXPOSE 5050
 
 # Copy appdaemon into image
 
-#RUN mkdir -p /usr/src/app
+RUN mkdir -p /usr/src/app
 RUN pwd
 RUN ls -l
 RUN ls -l /conf
