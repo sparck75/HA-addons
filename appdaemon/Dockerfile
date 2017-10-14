@@ -37,12 +37,12 @@ EXPOSE 5050
 #RUN mkdir -p /usr/src/app
 RUN pwd
 RUN ls -l
-RUN ls -l /config
+RUN ls -l /conf
 
 WORKDIR /usr/src/app
 RUN ls -l /usr/src/app
 RUN pwd
-RUN ls -l /config
+RUN ls -l /conf
 RUN git clone https://github.com/home-assistant/appdaemon
 
 RUN pwd
