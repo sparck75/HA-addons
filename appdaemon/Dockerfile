@@ -31,7 +31,13 @@ EXPOSE 5050
 #RUN mkdir -p /usr/src/app
 RUN ls -lR
 #WORKDIR /usr/src/app
-#RUN git clone https://github.com/home-assistant/appdaemon.git@master
+RUN git clone https://github.com/home-assistant/appdaemon.git@master
+
+RUN ls -l
+RUN pwd
+RUN ls -lR /etc
+RUN ls -lR /etc
+
 #COPY . .
 
 # Install
