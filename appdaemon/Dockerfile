@@ -44,7 +44,7 @@ RUN ls -l /conf
 # Getting latest appdaemon from repository
 ##############################################################
 RUN git clone https://github.com/home-assistant/appdaemon .
-#RUN git clone https://github.com/sparck75/appdaemon .
+RUN git clone https://github.com/sparck75/appdaemon .
 ###############################
 # DEBUG CODE
 ###############################
@@ -55,7 +55,7 @@ RUN ls -l /usr/src/app
 ###############################
 RUN chmod +x dockerStart.sh
 RUN pwd
-RUN ls -l
+RUN ls -l /usr/bin
 RUN ls -l /usr/src/app
 CMD [ "./dockerStart.sh" ]
 #WORKDIR /
