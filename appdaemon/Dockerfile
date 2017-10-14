@@ -1,5 +1,5 @@
-#FROM %%BASE_IMAGE%%
-FROM alpine:3.6
+FROM %%BASE_IMAGE%%
+#FROM alpine:3.6
 
 ENV LANG C.UTF-8
 ENV PATH /usr/local/bin:$PATH
