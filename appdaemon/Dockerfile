@@ -14,7 +14,8 @@ RUN apk add --no-cache jq git python3-dev \
 #	&& pip3 install --upgrade appdaemon \
 	&& rm -r /usr/lib/python*/ensurepip \
 	&& if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi \
-	&& pip install git+https://github.com/home-assistant/appdaemon.git@master
+#	&& pip install git+https://github.com/home-assistant/appdaemon.git@master
+	&& pip install git+https://github.com/sparck75/appdaemon.git@master
 
 ###############################
 # Listing installed APK
@@ -40,8 +41,8 @@ WORKDIR /usr/src/app
 ##############################################################
 # Getting latest appdaemon from repository
 ##############################################################
-RUN git clone https://github.com/home-assistant/appdaemon .
-#RUN git clone https://github.com/sparck75/appdaemon
+#RUN git clone https://github.com/home-assistant/appdaemon .
+RUN git clone https://github.com/sparck75/appdaemon .
 ###############################
 # DEBUG CODE
 ###############################
@@ -50,10 +51,12 @@ RUN ls -l /usr/src/app
 ###############################
 # Start script
 ###############################
-#RUN chmod +x dockerStart.sh
-#RUN ls -l /usr/src/app
-#CMD [ "/usr/src/app/dockerStart.sh -D DEDUG" ]
-WORKDIR /
-RUN chmod +x run.sh
-CMD [ "./run.sh" ]
+RUN chmod +x dockerStart.sh
+RUN pwd
+RUN ls -l
+RUN ls -l /usr/src/app
+CMD [ "./dockerStart.sh" ]
+#WORKDIR /
+#RUN chmod +x run.sh
+#CMD [ "./run.sh" ]
 ###############################
