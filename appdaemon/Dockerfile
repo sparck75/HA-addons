@@ -28,27 +28,28 @@ VOLUME /certs
 EXPOSE 5050
 
 # Copy appdaemon into image
-<<<<<<< HEAD
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-RUN git clone https://github.com/home-assistant/appdaemon
+#HEAD
+#RUN mkdir -p /usr/src/app
+#WORKDIR /usr/src/app
+#RUN git clone https://github.com/home-assistant/appdaemon
 =======
 #RUN mkdir -p /usr/src/app
-RUN ls -lR
-#WORKDIR /usr/src/app
-RUN git clone https://github.com/home-assistant/appdaemon.git@master
+RUN pwd
+RUN ls -l
+WORKDIR /usr/src/app
+RUN ls -l /usr/src/app
+RUN pwd
+RUN ls -l
+RUN git clone https://github.com/home-assistant/appdaemon.git@master 
 
+RUN pwd
 RUN ls -l
 RUN pwd
 RUN ls -lR /etc
-RUN ls -lR /etc
-
->>>>>>> 3f366989e90e4d44bc070d7b9a3702f2c5386d73
-#COPY . .
 
 # Install
 #RUN pip3 install .
 
 # Start script
-RUN chmod +x /usr/src/app/dockerStart.sh
+RUN chmod +x ./dockerStart.sh
 CMD [ "./dockerStart.sh" ]
