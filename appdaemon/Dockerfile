@@ -12,6 +12,7 @@ RUN	apk update
 ##################
 
 RUN apk add --no-cache gcc musl-dev
+RUN apk -vv info|sort
 RUN apk add --no-cache jq git python3-dev \
        libffi-dev libffi\
 	&& python3 -m ensurepip \
@@ -36,7 +37,7 @@ WORKDIR /usr/src/app
 RUN ls -l /usr/src/app
 RUN pwd
 RUN ls -l
-RUN git clone https://github.com/home-assistant/appdaemon.git@master 
+RUN git clone https://github.com/home-assistant/appdaemon
 
 RUN pwd
 RUN ls -l
