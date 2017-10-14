@@ -54,5 +54,6 @@ RUN ls -l /usr/src/app
 WORKDIR /usr/src/app/appdaemon
 # Start script
 RUN chmod +x dockerStart.sh
+RUN ls -l
 RUN ls -l /usr/src/app/appdaemon
-CMD [ "./appdaemon/dockerStart.sh" ]
+CMD [ "./dockerStart.sh" ]
