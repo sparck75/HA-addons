@@ -36,12 +36,13 @@ EXPOSE 5050
 
 # Copy appdaemon into image
 
-#RUN mkdir -p /tmp/app
+#RUN mkdir -p /usr/src/app
+#WORKDIR /usr/src/app
 #RUN pwd
 #RUN ls -l
 #RUN ls -l /conf
 
-#WORKDIR /tmp/app
+
 #RUN ls -l /tmp/app
 #RUN pwd
 #RUN ls -l /conf
@@ -55,10 +56,12 @@ RUN ls -l
 RUN pwd
 #WORKDIR /tmp/app
 #RUN ls -lR /tmp
-RUN ls -lR /usr/src/app
+#RUN ls -lR /usr/src/app
 
 
 
 # Start script
-RUN chmod +x dockerStart.sh
-CMD [ "./dockerStart.sh" ]
+#RUN chmod +x dockerStart.sh
+#CMD [ "./dockerStart.sh -D DEDUG" ]
+RUN chmod +x run.sh
+CMD [ "./run.sh" ]
