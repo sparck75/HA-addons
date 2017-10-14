@@ -2,7 +2,8 @@
 #FROM resin/raspberrypi3-python:3.6
 #ARG BUILD_FROM
 #FROM $BUILD_FROM
-FROM %%BASE_IMAGE%%
+#FROM %%BASE_IMAGE%%
+FROM frolvlad/alpine-gxx
 #FROM alpine:3.6
 #FROM homeassistant/docker-build-env:latest
 
@@ -47,7 +48,7 @@ RUN	apk update && apk upgrade
 #    && pip install cffi
 #RUN apt-get update && \
 #    apt-get install -y libffi-dev 
-RUN apk add --no-cache jq git python3-dev build-essential \
+RUN apk add --no-cache jq git python3-dev \
        libffi-dev libffi\
 	&& python3 -m ensurepip \
 	&& pip3 install --upgrade pip setuptools \
