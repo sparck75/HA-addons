@@ -30,12 +30,12 @@ WORKDIR /usr/src/app
 ##############################################################
 # Getting latest appdaemon from repository
 ##############################################################
-RUN git clone -b 2.1.10 https://github.com/sparck75/appdaemon .
+#RUN git clone -b 2.1.10 https://github.com/sparck75/appdaemon .
 
 ###############################
 # Start script
 ###############################
-RUN chmod +x dockerStart.sh
+#RUN chmod +x dockerStart.sh
 
-CMD [ "./dockerStart.sh" ]
+#CMD [ "./dockerStart.sh" ]
 ###############################
