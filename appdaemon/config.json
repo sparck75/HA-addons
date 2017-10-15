@@ -9,7 +9,7 @@
     "boot": "auto",
     "map": ["config:rw"],
     "options": {
-        "domain": "192.1.x.x"
+        "domain": "192.4.x.x"
     },
     "schema": {
         "domain": "str"
