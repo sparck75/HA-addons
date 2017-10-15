@@ -20,7 +20,7 @@ RUN apk add --no-cache jq git python3-dev \
 ###############################
 # Listing installed APK
 ###############################
-RUN apk -vv info|sort
+#RUN apk -vv info|sort
 ###############################
 VOLUME /conf
 VOLUME /certs
@@ -30,16 +30,16 @@ EXPOSE 5050
 ###############################
 # Copy appdaemon into image
 ###############################
-RUN pwd
-RUN ls -l
+#RUN pwd
+#RUN ls -l
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 ###############################
 # DEBUG CODE
 ###############################
-RUN pwd
-RUN ls -l
-RUN ls -l /conf
+#RUN pwd
+#RUN ls -l
+#RUN ls -l /conf
 ##############################################################
 # Getting latest appdaemon from repository
 ##############################################################
@@ -48,15 +48,15 @@ RUN git clone https://github.com/sparck75/appdaemon .
 ###############################
 # DEBUG CODE
 ###############################
-RUN pwd
-RUN ls -l /usr/src/app
+#RUN pwd
+#RUN ls -l /usr/src/app
 ###############################
 # Start script
 ###############################
 RUN chmod +x dockerStart.sh
-RUN pwd
-RUN ls -l /usr/bin
-RUN ls -l /usr/src/app
+#RUN pwd
+#RUN ls -l /usr/bin
+#RUN ls -l /usr/src/app
 CMD [ "./dockerStart.sh" ]
 #WORKDIR /
 #RUN chmod +x run.sh
