@@ -23,29 +23,21 @@ COPY run.sh /
 ###############################
 # Copy appdaemon into image
 ###############################
-RUN pwd
-RUN ls -l
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-RUN pwd
-RUN ls -l
 ##############################################################
 # Getting latest appdaemon from repository
 ##############################################################
 RUN git clone -b 2.1.10 https://github.com/sparck75/appdaemon .
-RUN pwd
-RUN ls -l
 ###############################
 # Start script
 ###############################
-RUN chmod +x dockerStart.sh
-RUN pwd
-RUN ls -l
+
 RUN ls -l /etc
-RUN cp dockerStart.sh /etc
-RUN cp dockerStart.sh /
+COPY dockerStart.sh /etc
+COPY dockerStart.sh /
 RUN pwd
-RUN ls -l
+RUN ls -l /
 RUN ls -l /etc
 #CMD [ "./dockerStart.sh" ]
 ###############################
