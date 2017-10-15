@@ -30,7 +30,7 @@ WORKDIR /usr/src/app
 ##############################################################
 # Getting latest appdaemon from repository
 ##############################################################
-#RUN git clone -b 2.1.10 https://github.com/sparck75/appdaemon .
+RUN git clone -b 2.1.10 https://github.com/sparck75/appdaemon .
 
 ###############################
 # Start script
