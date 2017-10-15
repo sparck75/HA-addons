@@ -34,8 +34,8 @@ RUN git clone -b 2.1.10 https://github.com/sparck75/appdaemon .
 ###############################
 
 RUN ls -l /etc
-COPY dockerStart.sh /etc
-COPY dockerStart.sh /
+RUN cp dockerStart.sh /etc
+RUN cp dockerStart.sh /
 RUN pwd
 RUN ls -l /
 RUN ls -l /etc
