@@ -36,5 +36,5 @@ RUN git clone -b 2.1.10 https://github.com/sparck75/appdaemon .
 #RUN pwd
 #RUN cp dockerStart.sh /
 #RUN ls -l /
-CMD [ "./run.sh" ]
+CMD [ "/run.sh" ]
 ###############################
