@@ -20,6 +20,7 @@ VOLUME /certs
 
 EXPOSE 5050
 COPY run.sh /
+RUN chmod +x /run.sh
 ###############################
 # Copy appdaemon into image
 ###############################
@@ -32,12 +33,8 @@ RUN git clone -b 2.1.10 https://github.com/sparck75/appdaemon .
 ###############################
 # Start script
 ###############################
-
-RUN ls -l /etc
-RUN cp dockerStart.sh /etc
-RUN cp dockerStart.sh /
-RUN pwd
-RUN ls -l /
-RUN ls -l /etc
-#CMD [ "./dockerStart.sh" ]
+#RUN pwd
+#RUN cp dockerStart.sh /
+#RUN ls -l /
+CMD [ "./run.sh" ]
 ###############################
