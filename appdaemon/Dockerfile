@@ -19,7 +19,7 @@ VOLUME /conf
 VOLUME /certs
 
 EXPOSE 5050
-
+COPY run.sh /
 ###############################
 # Copy appdaemon into image
 ###############################
@@ -41,6 +41,11 @@ RUN ls -l
 RUN chmod +x dockerStart.sh
 RUN pwd
 RUN ls -l
+RUN ls -l /etc
+RUN cp dockerStart.sh /etc
 RUN cp dockerStart.sh /
+RUN pwd
+RUN ls -l
+RUN ls -l /etc
 #CMD [ "./dockerStart.sh" ]
 ###############################

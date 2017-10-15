@@ -13,7 +13,7 @@ if [ ! -d ${CONFIG_DIR} ]; then
 fi
 
 echo 0.0.0.0 ${DOMAIN} >> /etc/hosts
-echo "Starting my appdaemon test"
+echo "Starting my appdaemon test for HA-addons"
 
 appdaemon -c "$CONFIG_DIR" "$EXTRA_CMD"
 
