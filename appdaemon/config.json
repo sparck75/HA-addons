@@ -2,17 +2,21 @@
     "name": "AppDaemon",
     "version": "latest",
     "slug": "appdaemon",
-    "description": "AppDaemon version (2.1.10) for Home Assistant",
+    "description": "AppDaemon version (latest) for Home Assistant\n Build using dev branc",
     "url": "https://github.com/sparck75/hassio-addons/appdaemon",
     "startup": "after",
     "image": "sparck75/{arch}-addon-appdaemon",
     "boot": "auto",
-    "map": ["config:rw","addons:rw"],
+    "map": ["config:rw","addons:rw", "ssl:rw"],
     "options": {
-        "domain": "1.1.1.1"
+        "domain": "0.0.0.0",
+        "domain_ssl": "xxx.duckdns.org",
+		"arguments": "-D DEBUG"
     },
     "schema": {
-        "domain": "str"
+        "domain": "str",
+        "domain_ssl": "str",
+		"arguments": "str"
     }, 
     "ports": {
         "80/tcp": 5050

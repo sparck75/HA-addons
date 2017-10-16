@@ -22,6 +22,9 @@ VOLUME /certs
 EXPOSE 5050
 
 COPY run.sh /
+COPY apps-example.yaml /etc
+COPY appdaemon-example.yaml /etc
+
 RUN chmod +x /run.sh
 
 ###############################
@@ -32,7 +35,7 @@ WORKDIR /usr/src/app
 ##############################################################
 # Getting latest appdaemon from repository
 ##############################################################
-RUN git clone -b 2.1.10 https://github.com/sparck75/appdaemon .
+RUN git clone https://github.com/home-assistant/appdaemon.git .
 RUN pip3 install .
 ###############################
 # Start script
