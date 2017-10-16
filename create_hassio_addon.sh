@@ -109,7 +109,7 @@ popd > /dev/null 2>&1
 
 BASE_IMAGE="homeassistant\/$ARCH-base:latest"
 BUILD_DIR=${BUILD_DIR:=$SCRIPTPATH}
-WORKSPACE=${BUILD_DIR:=$SCRIPTPATH}/$ARCH-appdaemon
+WORKSPACE=${BUILD_DIR:=$SCRIPTPATH}/$ARCH-workspace
 ADDON_WORKSPACE=$WORKSPACE/$SLUG
 
 # setup docker
