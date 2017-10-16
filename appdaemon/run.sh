@@ -14,6 +14,10 @@ fi
 
 echo 0.0.0.0 $DOMAIN >> /etc/hosts
 echo "Starting my appdaemon test for HA-addons"
-
+echo "Config: " $CONFIG_DIR
+echo "Extra: " $EXTRA_CMD
+echo "Domain: " $DOMAIN
+echo pwd
+echo ls -l
 appdaemon -c $CONFIG_DIR $EXTRA_CMD
 

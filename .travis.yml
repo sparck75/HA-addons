@@ -6,9 +6,6 @@ services:
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install jq
-#  - sudo apt-get install libffi-dev
-#  - sudo apt-get install python-dev
-#  - sudo apt-get install python-tk
   - chmod u+x build.sh
   - chmod u+x create_hassio_addon.sh
 
