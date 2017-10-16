@@ -3,9 +3,9 @@ set -e
 
 BUILD_CONTAINER_NAME=ha-addons-$$
 DOCKER_PUSH="true"
-DOCKER_CACHE="true"
+DOCKER_CACHE="false"
 DOCKER_WITH_LATEST="true"
-BRANCH=master
+BRANCH=1.1
 REPOSITORY=https://github.com/sparck75/ha-addons
 
 cleanup() {
@@ -109,7 +109,7 @@ popd > /dev/null 2>&1
 
 BASE_IMAGE="homeassistant\/$ARCH-base:latest"
 BUILD_DIR=${BUILD_DIR:=$SCRIPTPATH}
-WORKSPACE=${BUILD_DIR:=$SCRIPTPATH}/$ARCH-appdaemon
+WORKSPACE=${BUILD_DIR:=$SCRIPTPATH}/$ARCH-workspace
 ADDON_WORKSPACE=$WORKSPACE/$SLUG
 
 # setup docker
