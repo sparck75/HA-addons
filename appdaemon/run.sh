@@ -17,7 +17,8 @@ echo "Starting my appdaemon test for HA-addons"
 echo "Config: " $CONFIG_DIR
 echo "Extra: " $EXTRA_CMD
 echo "Domain: " $DOMAIN
-echo pwd
-echo ls -l
+pwd
+ls -l
+ls /config/hadaemon
 appdaemon -c $CONFIG_DIR $EXTRA_CMD
 
