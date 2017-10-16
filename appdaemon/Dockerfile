@@ -27,8 +27,8 @@ RUN chmod +x /run.sh
 ###############################
 # Copy appdaemon into image
 ###############################
-#RUN mkdir -p /usr/src/app
-#WORKDIR /usr/src/app
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 ##############################################################
 # Getting latest appdaemon from repository
 ##############################################################
