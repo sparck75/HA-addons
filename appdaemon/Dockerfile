@@ -12,8 +12,8 @@ RUN apk add --no-cache jq git python3-dev \
 	&& pip3 install --upgrade pip \
 	&& pip3 install --upgrade pip cffi \
 	&& rm -r /usr/lib/python*/ensurepip \
-	&& if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi \
-	&& pip install git+https://github.com/home-assistant/appdaemon.git@master
+	&& if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi 
+#	&& pip install git+https://github.com/home-assistant/appdaemon.git@master
 #	&& pip install git+https://github.com/sparck75/appdaemon.git@2.1.10
 
 VOLUME /conf
@@ -32,7 +32,8 @@ RUN chmod +x /run.sh
 ##############################################################
 # Getting latest appdaemon from repository
 ##############################################################
-#RUN git clone -b 2.1.10 https://github.com/sparck75/appdaemon .
+RUN git clone -b 2.1.10 https://github.com/sparck75/appdaemon .
+RUN pip3 install .
 ###############################
 # Start script
 ###############################
