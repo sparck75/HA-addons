@@ -12,8 +12,7 @@ RUN apk add --no-cache jq git python3-dev \
 	&& pip3 install --upgrade pip \
 	&& pip3 install --upgrade pip cffi \
 	&& rm -r /usr/lib/python*/ensurepip \
-	&& if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi \
-	&& pip install git+https://github.com/sparck75/appdaemon.git@2.1.10
+	&& if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi 
 
 VOLUME /conf
 VOLUME /certs
@@ -21,17 +20,21 @@ VOLUME /certs
 EXPOSE 5050
 
 COPY run.sh /
+COPY apps-example.yaml /etc
+COPY appdaemon-example.yaml /etc
+
 RUN chmod +x /run.sh
 
 ###############################
 # Copy appdaemon into image
 ###############################
-#RUN mkdir -p /usr/src/app
-#WORKDIR /usr/src/app
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 ##############################################################
 # Getting latest appdaemon from repository
 ##############################################################
-#RUN git clone -b 2.1.10 https://github.com/sparck75/appdaemon .
+RUN git clone https://github.com/home-assistant/appdaemon.git .
+RUN pip3 install .
 ###############################
 # Start script
 ###############################
