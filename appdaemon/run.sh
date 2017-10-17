@@ -3,7 +3,7 @@ set -e
 
 CONFIG_PATH=/data/options.json
 CONFIG_DIR=/config/hadaemon
-EXTRA_CMD="-D DEBUG"
+EXTRA_CMD="-D DEBUG --commtype=SSE"
 
 DOMAIN=$(jq --raw-output ".domain" $CONFIG_PATH)
 
@@ -15,5 +15,6 @@ fi
 
 echo 0.0.0.0 $DOMAIN >> /etc/hosts
 
+appdaemon -v
 appdaemon -c $CONFIG_DIR $EXTRA_CMD
 
