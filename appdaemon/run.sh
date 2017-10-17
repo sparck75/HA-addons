@@ -16,5 +16,5 @@ fi
 
 echo 0.0.0.0 $DOMAIN >> /etc/hosts
 
-appdaemon -c $CONFIG_DIR -v $CERTS_PATH $EXTRA_CMD
+appdaemon -c $CONFIG_DIR $EXTRA_CMD
 
