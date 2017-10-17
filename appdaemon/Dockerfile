@@ -1,7 +1,7 @@
 FROM %%BASE_IMAGE%%
 
 ENV LANG C.UTF-8
-ENV PATH /usr/src/app:$PATH
+ENV PATH /usr/local/app:$PATH
 
 ###############################
 RUN apk add --no-cache gcc musl-dev
@@ -15,8 +15,9 @@ RUN apk add --no-cache jq git python3-dev \
 	&& rm -r /usr/lib/python*/ensurepip \
 	&& if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi 
 
-VOLUME /config
-VOLUME /ssl
+###############################
+VOLUME /conf
+VOLUME /certs
 
 EXPOSE 5050
 
