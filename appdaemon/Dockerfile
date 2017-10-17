@@ -25,10 +25,10 @@ COPY run.sh /
 COPY apps-example.yaml /etc
 COPY appdaemon-example.yaml /etc
 
-RUN chmod +x /run.sh
+RUN chmod +x /runappdaemon.sh
 
 ###############################
 # Start script
 ###############################
-CMD [ "/run.sh" ]
+CMD [ "/runappdaemon.sh" ]
 ###############################
