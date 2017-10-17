@@ -3,7 +3,6 @@ set -e
 
 CONFIG_PATH=/data/options.json
 CONFIG_DIR=/config/hadaemon
-CERTS_PATH=/ssl
 
 EXTRA_CMD="-D DEBUG --commtype=SSE"
 
@@ -17,5 +16,5 @@ fi
 
 echo 0.0.0.0 $DOMAIN >> /etc/hosts
 
-appdaemon -c $CONFIG_DIR:/conf -v $CERTS_PATH:/certs $EXTRA_CMD
+appdaemon -c $CONFIG_DIR -v $CERTS_PATH $EXTRA_CMD
 

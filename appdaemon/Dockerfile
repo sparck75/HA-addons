@@ -16,8 +16,8 @@ RUN apk add --no-cache jq git python3-dev \
 	&& if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi 
 
 ###############################
-VOLUME /conf
-VOLUME /certs
+VOLUME /config
+VOLUME /ssl
 
 EXPOSE 5050
 
