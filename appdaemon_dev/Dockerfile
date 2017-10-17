@@ -11,7 +11,7 @@ RUN apk add --no-cache jq git python3-dev \
 	&& pip3 install --upgrade pip setuptools \
 	&& pip3 install --upgrade pip \
 	&& pip3 install --upgrade pip cffi \
-	&& pip install git+https://github.com/home-assistant/appdaemon.git@master
+	&& pip3 install git+https://github.com/home-assistant/appdaemon.git@master \
 	&& rm -r /usr/lib/python*/ensurepip \
 
 	&& if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi 
