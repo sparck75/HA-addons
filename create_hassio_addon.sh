@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-BUILD_CONTAINER_NAME=hassio-addons-$$
+BUILD_CONTAINER_NAME=ha-addons-$$
 DOCKER_PUSH="true"
 DOCKER_CACHE="true"
 DOCKER_WITH_LATEST="true"
@@ -12,7 +12,7 @@ cleanup() {
     echo "[INFO] Cleanup."
 
     # Stop docker container
-    echo "[INFO] Cleaning up hassio-build container."
+    echo "[INFO] Cleaning up ha-build container."
     docker stop $BUILD_CONTAINER_NAME 2> /dev/null || true
     docker rm --volumes $BUILD_CONTAINER_NAME 2> /dev/null || true
 
