@@ -2,7 +2,7 @@
     "name": "AppDaemonDev",
     "version": "latest",
     "slug": "appdaemondev",
-    "description": "AppDaemon(dev branch) for Hassio.",
+    "description": "AppDaemon(dev branch) addons for Hassio.",
     "url": "https://github.com/sparck75/hassio-addons/appdaemon_dev",
     "startup": "after",
     "boot": "auto",
