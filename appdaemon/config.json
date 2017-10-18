@@ -1,6 +1,6 @@
 {
     "name": "AppDaemon",
-    "version": "latest",
+    "version": "1.2",
     "slug": "appdaemon",
     "description": "AppDaemon version (latest) for Home Assistant. Build using master branch.",
     "url": "https://github.com/sparck75/hassio-addons/appdaemon",
