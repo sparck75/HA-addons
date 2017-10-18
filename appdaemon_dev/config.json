@@ -2,15 +2,14 @@
     "name": "AppDaemonDev",
     "version": "latest",
     "slug": "appdaemondev",
-    "description": "AppDaemon version (latest) for Home Assistant. Build using master branch.",
+    "description": "AppDaemon version (latest) for Home Assistant. Build using dev branch.",
     "url": "https://github.com/sparck75/hassio-addons/appdaemon_dev",
     "startup": "after",
-    "image": "sparck75/{arch}-addon-appdaemon-dev",
     "boot": "auto",
     "map": ["config:rw","addons:rw","ssl"],
     "options": {
         "domain": "x.x.x.x",
-        "commtype": "SSE",
+        "commtype": "sse",
         "debugging": "none"
     },
     "schema": {
@@ -20,5 +19,6 @@
     }, 
     "ports": {
         "80/tcp": 5050
-    }
+    },
+	"image": "sparck75/{arch}-addon-appdaemon-dev"
 }
