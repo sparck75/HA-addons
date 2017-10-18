@@ -3,10 +3,12 @@ set -e
 
 CONFIG_PATH=/data/options.json
 CONFIG_DIR=/config/hadaemon
+EXTRA_CMD=""
 
-EXTRA_CMD="-D DEBUG --commtype=SSE"
 
 DOMAIN=$(jq --raw-output ".domain" $CONFIG_PATH)
+COMMTYPE=$(jq --raw-output ".commtype" $CONFIG_PATH)
+DEBUGGING=$(jq --raw-output ".debugging" $CONFIG_PATH)
 
 if [ ! -d $CONFIG_DIR ]; then
 	mkdir -p $CONFIG_DIR
@@ -14,20 +16,16 @@ if [ ! -d $CONFIG_DIR ]; then
 	cp /etc/apps-example.yaml $CONFIG_DIR/apps.yaml
 fi
 
-if [ ! -d $CONFIG_DIR ]; then
-	mkdir -p $CONFIG_DIR
-	cp /etc/appdaemon-example.yaml $CONFIG_DIR/appdaemon.yaml
-	cp /etc/apps-example.yaml $CONFIG_DIR/apps.yaml
+if [ ! $DEBUG ]; then
+	$EXTRA_CMD = $EXTRA_CMD + "-D DEBUG "
 fi
+
+if [ ! $COMMTYPE ]; then
+	$EXTRA_CMD = $EXTRA_CMD + "--commtype:SSE "
+fi
+
 
 echo 0.0.0.0 $DOMAIN >> /etc/hosts
-
-ls -l /config
-ls -l /config/hadaemon
-ls -l /ssl
-ls -l /etc
-ls -l /usr
-cat /data/options.json
 
 appdaemon -c $CONFIG_DIR $EXTRA_CMD
 
