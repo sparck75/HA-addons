@@ -18,11 +18,11 @@ if [ ! -d $CONFIG_DIR ]; then
 fi
 
 if [ ! $DEBUGGING != "DEBUG" ]; then
-	EXTRA_CMD = "-D DEBUG "
+	$EXTRA_CMD = "-D DEBUG "
 fi
 
 if [ $COMMTYPE != "SSE" ]; then
-	EXTRA2_CMD = "--commtype:SSE "
+	$EXTRA2_CMD = "--commtype:SSE "
 fi
 
 
