@@ -5,7 +5,7 @@ BUILD_CONTAINER_NAME=ha-addons-$$
 DOCKER_PUSH="true"
 DOCKER_CACHE="false"
 DOCKER_WITH_LATEST="true"
-BRANCH=1.2
+BRANCH=master
 REPOSITORY=https://github.com/sparck75/ha-addons
 
 cleanup() {
