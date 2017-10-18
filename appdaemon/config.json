@@ -7,7 +7,7 @@
     "startup": "after",
     "image": "sparck75/{arch}-addon-appdaemon",
     "boot": "auto",
-    "map": ["config:rw","addons:rw"],
+    "map": ["config:rw","addons:rw","ssl"],
     "options": {
         "domain": "0.0.0.0"
     },
