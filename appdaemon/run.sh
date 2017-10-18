@@ -3,8 +3,8 @@ set -e
 
 CONFIG_PATH=/data/options.json
 CONFIG_DIR=/config/hadaemon
-EXTRA_CMD=""
-EXTRA_CMD2=""
+#EXTRA_CMD=""
+#EXTRA_CMD2=""
 
 
 DOMAIN=$(jq --raw-output ".domain" $CONFIG_PATH)
@@ -17,12 +17,16 @@ if [ ! -d $CONFIG_DIR ]; then
 	cp /etc/apps-example.yaml $CONFIG_DIR/apps.yaml
 fi
 
-if [ ! $DEBUGGING == "DEBUG" ]; then
+if [ "$DEBUGGING" = "DEBUG" ]; then
 	EXTRA_CMD = "-D DEBUG"
+	else
+	  EXTRA_CMD = " "
 fi
 
-if [ $COMMTYPE == "SSE" ]; then
+if [ "$COMMTYPE" == "SSE" ]; then
 	EXTRA_CMD2 = "--commtype:SSE "
+	else
+	  EXTRA_CMD2 = " "
 fi
 
 
