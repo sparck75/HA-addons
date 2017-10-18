@@ -16,8 +16,8 @@ if [ ! -d $CONFIG_DIR ]; then
 	cp /etc/apps-example.yaml $CONFIG_DIR/apps.yaml
 fi
 
-if [ ! $DEBUG ]; then
-	$EXTRA_CMD = $EXTRA_CMD + "-D DEBUG "
+if [ ! $DEBUGGING != "none" ]; then
+	$EXTRA_CMD = $EXTRA_CMD + "-D " + $DEBUGGING
 fi
 
 if [ ! $COMMTYPE ]; then
