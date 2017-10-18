@@ -2,7 +2,7 @@
     "name": "AppDaemonDev",
     "version": "latest",
     "slug": "appdaemondev",
-    "description": "AppDaemon version (latest) for Home Assistant. Build using dev branch.",
+    "description": "AppDaemon(dev branch) for Hassio. (private) // Build using dev branch of appdaemon.",
     "url": "https://github.com/sparck75/hassio-addons/appdaemon_dev",
     "startup": "after",
     "boot": "auto",

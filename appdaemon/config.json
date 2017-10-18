@@ -2,7 +2,7 @@
     "name": "AppDaemon",
     "version": "latest",
     "slug": "appdaemon",
-    "description": "AppDaemon version (latest) for Home Assistant. Build using master branch.",
+    "description": "AppDaemon version (2.1.0) for Hassio. (private) // Build using master branch of appdaemon.",
     "url": "https://github.com/sparck75/hassio-addons/appdaemon",
     "startup": "after",
     "boot": "auto",
