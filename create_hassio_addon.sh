@@ -161,7 +161,7 @@ docker run --rm \
     --name $BUILD_CONTAINER_NAME \
     --privileged \
     hassioaddons/build-env:latest \
-    /run-docker.sh
+#    /run-docker.sh
 
 echo "[INFO] cleanup WORKSPACE"
 cd "$BUILD_DIR"
