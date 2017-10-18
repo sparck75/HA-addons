@@ -5,7 +5,7 @@ BUILD_CONTAINER_NAME=ha-addons-$$
 DOCKER_PUSH="true"
 DOCKER_CACHE="false"
 DOCKER_WITH_LATEST="true"
-BRANCH=master
+BRANCH=1.2
 REPOSITORY=https://github.com/sparck75/ha-addons
 
 cleanup() {
@@ -160,8 +160,8 @@ docker run --rm \
     -e DOCKER_TAG="$DOCKER_TAG" \
     --name $BUILD_CONTAINER_NAME \
     --privileged \
-    hassioaddons/build-env:latest \
-#    /run-docker.sh
+    homeassistant/docker-build-env:latest \
+    /run-docker.sh
 
 echo "[INFO] cleanup WORKSPACE"
 cd "$BUILD_DIR"
