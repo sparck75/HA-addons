@@ -15,15 +15,15 @@ if [ ! -d $CONFIG_DIR ]; then
 fi
 
 if [ $DEBUGGING = "DEBUG" ]; then
-  EXTRA_CMD = "-D DEBUG"
+  EXTRA_CMD="-D DEBUG"
 else
-  EXTRA_CMD = " "
+  EXTRA_CMD=" "
 fi
 
 if [ $COMMTYPE == "SSE" ]; then
-  EXTRA_CMD2 = "--commtype:SSE "
+  EXTRA_CMD2="--commtype:SSE "
 else
-  EXTRA_CMD2 = " "
+  EXTRA_CMD2=" "
 fi
 echo 0.0.0.0 $DOMAIN >> /etc/hosts
 
