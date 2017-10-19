@@ -6,18 +6,21 @@
 
 ## Just code
 
-These add-ons are not being built intentionally as they are for testing purposes only. You'll need to download and place them under `/addons` folder of your Hass.io instance. 
+These add-ons are being built by Travis CI.   
 
-## [AppDaemon](https://github.com/sparck75/ha-addons/tree/master/appdaemon)
+## [AppDaemon](https://github.com/home-assistant/appdaemon)
 
 Beta-version of AppDaemon with HaDashobard v2.
 
-## Usefull commands
+## Configuration to work with SSL
 
-If you're getting too much stalled containers, run (warning, can damage you setup!!!)
+Configuration options are:
+        "domain":  "0.0.0.0":  I use my internal IP (192.168.x.x)
+        "commtype":    "sse":  2 choices:  websockets, sse
+        "debugging":  "info":  (debug, info, warning, error, critical, none)
+		
+- Ensure you have move all the apps definition from appdaemon.yaml to a file called the apps.yaml in your /config/hadaemon folder.
+- Works only with port 5050.
 
-```
-docker rm -v $(docker ps --filter status=exited -q 2>/dev/null)
-docker rm -v $(docker ps --filter status=created -q 2>/dev/null)
-```
-Similar can be done for images.
+appdaemon.yaml
+  

@@ -1,11 +1,11 @@
 #!/bin/bash
 set -e
 
-BUILD_CONTAINER_NAME=ha-addons-$$
+BUILD_CONTAINER_NAME=hassio-addons-$$
 DOCKER_PUSH="true"
 DOCKER_CACHE="false"
 DOCKER_WITH_LATEST="true"
-BRANCH=master
+BRANCH=1.3
 REPOSITORY=https://github.com/sparck75/ha-addons
 
 cleanup() {
