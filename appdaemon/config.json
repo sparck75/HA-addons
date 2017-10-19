@@ -2,15 +2,15 @@
     "name": "AppDaemon",
     "version": "latest",
     "slug": "appdaemon",
-    "description": "AppDaemon version (2.1.0) for Hassio. (private) Build using master branch of appdaemon.",
+    "description": "AppDaemon version (2.1.0) for Hassio.",
     "url": "https://github.com/sparck75/hassio-addons/appdaemon",
     "startup": "after",
     "boot": "auto",
     "map": ["config:rw","addons:rw","ssl"],
     "options": {
-        "domain": "x.x.x.x",
+        "domain": "0.0.0.0",
         "commtype": "sse",
-        "debugging": "none"
+        "debugging": "info"
     },
     "schema": {
         "domain": "str",
