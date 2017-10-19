@@ -138,6 +138,7 @@ UPSTREAM_VERSION=${DOCKER_TAG%-*}
 
 # If set custom image in file
 DOCKER_IMAGE=$(jq --raw-output ".image // empty" "$ADDON_WORKSPACE/config.json")
+PORTS_MAPPING=$(jq --raw-output ".80/tcp" "$ADDON_WORKSPACE/config.json")
 
 # Replace hass.io vars
 sed -i "s/%%BASE_IMAGE%%/${BASE_IMAGE}/g" "$ADDON_WORKSPACE/Dockerfile"
@@ -153,6 +154,7 @@ docker rm --volumes $BUILD_CONTAINER_NAME 2> /dev/null || true
 docker run --rm \
     -v "$ADDON_WORKSPACE":/docker \
     -v ~/.docker:/root/.docker \
+    -p "$PORTS_MAPPING" \
     -e DOCKER_PUSH=$DOCKER_PUSH \
     -e DOCKER_CACHE=$DOCKER_CACHE \
     -e DOCKER_WITH_LATEST=$DOCKER_WITH_LATEST \
