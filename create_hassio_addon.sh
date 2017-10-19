@@ -138,7 +138,7 @@ UPSTREAM_VERSION=${DOCKER_TAG%-*}
 
 # If set custom image in file
 DOCKER_IMAGE=$(jq --raw-output ".image // empty" "$ADDON_WORKSPACE/config.json")
-PORTS_MAPPING=$(jq --raw-output ".80/tcp" "$ADDON_WORKSPACE/config.json")
+PORTS_MAPPING="5050"
 
 # Replace hass.io vars
 sed -i "s/%%BASE_IMAGE%%/${BASE_IMAGE}/g" "$ADDON_WORKSPACE/Dockerfile"
