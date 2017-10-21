@@ -5,7 +5,7 @@ BUILD_CONTAINER_NAME=hassio-addons-$$
 DOCKER_PUSH="true"
 DOCKER_CACHE="false"
 DOCKER_WITH_LATEST="true"
-BRANCH=master
+BRANCH=1.4
 REPOSITORY=https://github.com/sparck75/ha-addons
 
 cleanup() {
