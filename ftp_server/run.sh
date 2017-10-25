@@ -27,23 +27,6 @@ DEBUGGING=$(jq --raw-output ".debugging" $CONFIG_PATH)
 #	mkdir -p $CONFIG_DIR/compiled/html
 #fi
 
-if [ $DEBUGGING = "debug" ]; then
-  EXTRA_CMD="-D DEBUG"
-elif [ $DEBUGGING = "info" ]; then
-  EXTRA_CMD="-D INFO"
-elif [ $DEBUGGING = "warning" ]; then
-  EXTRA_CMD="-D WARNING"
-elif [ $DEBUGGING = "error" ]; then
-  EXTRA_CMD="-D ERROR"
-elif [ $DEBUGGING = "critical" ]; then
-  EXTRA_CMD="-D CRITICAL"
-elif [ $DEBUGGING = "none" ]; then
-  EXTRA_CMD=" "
-else
-  echo "Invalid debugging option in config.json. Valid value are: (debug, info, warning, error, critical, none)"
-  EXTRA_CMD=" "
-fi
-
 if [ $COMMTYPE == "sse" ]; then
   EXTRA_CMD2="--commtype=SSE "
 elif [ $COMMTYPE == "websockets" ]; then
@@ -55,7 +38,7 @@ fi
 echo 0.0.0.0 $DOMAIN >> /etc/hosts
 
 echo ls -l /etc
-service vsftpd restart
-#appdaemon -c $CONFIG_DIR $EXTRA_CMD $EXTRA_CMD2
+vsftpd start
+#appdaemon -c $CONFIG_DIR $EXTR_CMD $EXTRA_CMD2
 
 
