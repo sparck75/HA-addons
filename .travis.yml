@@ -12,6 +12,7 @@ before_install:
 env:
   - ADDON=appdaemon
   - ADDON=appdaemon_dev
+  - ADDON=ftp_server
 script:
   - docker login -u "$DOCKER_USER" -p "$DOCKER_PASS"
   - ./build.sh "$ADDON"
