@@ -21,7 +21,7 @@ DEBUGGING=$(jq --raw-output ".debugging" $CONFIG_PATH)
 #	mkdir -p $CONFIG_DIR/compiled/css
 #fi
 #if [ ! -d $CONFIG_DIR/compiled/javascript ]; then
-	mkdir -p $CONFIG_DIR/compiled/javascript#
+#	mkdir -p $CONFIG_DIR/compiled/javascript#
 #fi
 #if [ ! -d $CONFIG_DIR/compiled/html ]; then
 #	mkdir -p $CONFIG_DIR/compiled/html
