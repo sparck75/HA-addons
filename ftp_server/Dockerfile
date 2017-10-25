@@ -5,12 +5,11 @@ ENV LANG C.UTF-8
 
 ###############################
 #RUN apk add --no-cache gcc musl-dev
-RUN apk add --no-cache jq git python3-dev vsftpd db4-utils db4 \
+RUN apk add --no-cache jq python3-dev vsftpd \
 #       libffi-dev libffi\
 #	&& python3 -m ensurepip \
 	&& pip3 install --upgrade pip setuptools \
-	&& pip3 install --upgrade pip db4 \
-	&& pip3 install --upgrade pip db4-utils \
+	&& pip3 install --upgrade pip \
 	&& pip3 install --upgrade pip vsftpd \
 	&& rm -r /usr/lib/python*/ensurepip \
 	&& if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi 
