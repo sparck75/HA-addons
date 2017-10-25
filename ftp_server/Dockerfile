@@ -5,7 +5,7 @@ ENV PATH /usr/local/app:$PATH
 
 ###############################
 #RUN apk add --no-cache gcc musl-dev
-RUN apk add --no-cache jq git vsftpd \
+RUN apk add --no-cache jq git python3-dev vsftpd \
 #       libffi-dev libffi\
 	&& python3 -m ensurepip \
 	&& pip3 install --upgrade pip setuptools \
