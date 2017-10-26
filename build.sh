@@ -3,7 +3,7 @@
 for addon in "$@";
 do
 #    if [ -z $TRAVIS_COMMIT_RANGE ] || git diff --name-only $TRAVIS_COMMIT_RANGE | grep -v README.md | grep -q $addon; then
-#	archs=$(jq -r '.arch // ["armhf","amd64","aarch64","i386"] | .[]' ${addon}/config.json)
+	archs=$(jq -r '.arch // ["armhf","amd64","aarch64","i386"] | .[]' ${addon}/config.json)
 	archs=$(jq -r '.arch // ["armhf"] | .[]' ${addon}/config.json)
 	for arch in $archs
 	do

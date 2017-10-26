@@ -24,6 +24,9 @@ EXPOSE 5050
 COPY run.sh /
 COPY apps-example.yaml /etc
 COPY appdaemon-example.yaml /etc
+COPY Hello.dash /etc
+COPY hello.py /etc
+
 
 RUN chmod +x /run.sh
 
