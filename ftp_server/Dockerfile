@@ -7,7 +7,7 @@ ENV LANG C.UTF-8
 #RUN apk add --no-cache gcc musl-dev
 RUN apk add --no-cache jq python3-dev proftpd \
 #       libffi-dev libffi\
-#	&& python3 -m ensurepip \
+	&& python3 -m ensurepip \
 	&& pip3 install --upgrade pip setuptools \
 	&& pip3 install --upgrade pip \
 	&& pip3 install --upgrade pip proftpd \
