@@ -70,5 +70,5 @@ else
 fi
 
 # Run vsftpd:
-&>/dev/null /usr/sbin/vsftpd /etc/vsftpd/vsftpd.conf
+&>/dev/null /usr/sbin/proftpd /etc/vsftpd/vsftpd.conf
 
